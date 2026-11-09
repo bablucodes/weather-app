@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="app-shell">
+        <div class="weather-card search-card" id="searchCard">
+            <div class="card-header">
+                <div class="brand-wrap">
+                    <i class="fa-solid fa-cloud-sun header-icon"></i>
+                    <div>
+                        <p class="eyebrow">Live forecast</p>
+                        <h1>Weather App</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-box">
+                <div class="search-icon-wrapper">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="cityInput" placeholder="Search city or region" aria-label="Search city" />
+                </div>
+                <button id="searchBtn" class="search-btn" type="button" aria-label="Search weather">
+                    <i class="fa-solid fa-search"></i>
+                </button>
+            </div>
+
+            <div class="divider">
+                <span>or</span>
+            </div>
+
+            <button id="locationBtn" class="location-btn" type="button">
+                <i class="fa-solid fa-location-crosshairs"></i>
+                <span>Use my location</span>
+            </button>
+
+            <div class="feature-row">
+                <div class="feature-pill">
+                    <i class="fa-solid fa-wind"></i>
+                    <span>Live wind</span>
+                </div>
+                <div class="feature-pill">
+                    <i class="fa-solid fa-droplet"></i>
+                    <span>Humidity</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="weather-card result-card hidden" id="resultCard">
+            <div class="result-topbar">
+                <button class="icon-button back-icon" type="button" aria-label="Back to search">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <div class="header-badge" id="weatherBadge">Now</div>
+            </div>
+
+            <div class="weather-main">
+                <div class="weather-icon-container">
+                    <img id="weatherIcon" src="" alt="Weather condition" class="weather-icon-img" />
+                </div>
+
+                <div class="temperature-block">
+                    <h2 id="temp">--°</h2>
+                    <p id="condition" class="condition">Loading...</p>
+                </div>
+            </div>
+
+            <div class="location-block">
+                <i class="fa-solid fa-location-dot location-icon"></i>
+                <div>
+                    <span class="location-label">Location</span>
+                    <span id="cityName">--</span>
+                </div>
+            </div>
+
+            <div class="date-block">
+                <i class="fa-regular fa-calendar-days"></i>
+                <span id="localTime">--</span>
+            </div>
+
+            <div class="weather-details">
+                <div class="detail-item">
+                    <div class="detail-icon-wrap temp-icon">
+                        <i class="fa-solid fa-temperature-half"></i>
+                    </div>
+                    <div>
+                        <span id="feelsLike" class="value">--</span>
+                        <span class="label">Feels like</span>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-icon-wrap humidity-icon">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <div>
+                        <span id="humidity" class="value">--</span>
+                        <span class="label">Humidity</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="extra-details">
+                <div class="extra-item">
+                    <i class="fa-solid fa-wind wind-icon"></i>
+                    <div>
+                        <span id="windSpeed" class="value">--</span>
+                        <span class="label">Wind</span>
+                    </div>
+                </div>
+                <div class="extra-item">
+                    <i class="fa-solid fa-gauge pressure-icon"></i>
+                    <div>
+                        <span id="pressure" class="value">--</span>
+                        <span class="label">Pressure</span>
+                    </div>
+                </div>
+                <div class="extra-item">
+                    <i class="fa-solid fa-eye visibility-icon"></i>
+                    <div>
+                        <span id="visibility" class="value">--</span>
+                        <span class="label">Visibility</span>
+                    </div>
+                </div>
+                <div class="extra-item">
+                    <i class="fa-solid fa-cloud cloud-icon"></i>
+                    <div>
+                        <span id="cloudCover" class="value">--</span>
+                        <span class="label">Clouds</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-row">
+                <button id="refreshBtn" class="refresh-btn" type="button">
+                    <i class="fa-solid fa-rotate-right"></i>
+                    Refresh
+                </button>
+                <button id="toggleUnitBtn" class="unit-btn" type="button" aria-label="Toggle temperature unit">
+                    °C / °F
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
